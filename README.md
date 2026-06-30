@@ -1,4 +1,8 @@
+<div align="center">
+
 # 🌊 Flood Risk Clustering Using EM-DAT Data
+
+### Unsupervised Machine Learning Framework for Global Flood Risk Analysis
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)
@@ -8,64 +12,117 @@
 
 ---
 
-## 📌 Project Overview
+A comparative study of **K-Means, Gaussian Mixture Models (GMM), DBSCAN, and OPTICS** on the **EM-DAT global flood disaster dataset** using feature engineering, Principal Component Analysis (PCA), and cluster evaluation metrics.
 
-This project presents an **unsupervised machine learning framework** for identifying global flood risk patterns using the **EM-DAT (Emergency Events Database)**. Unlike traditional flood risk studies based on simulated datasets, this work utilizes **real-world historical flood events** and applies clustering algorithms to discover distinct flood-risk groups.
-
-The project compares multiple clustering techniques and evaluates their performance using standard internal and external clustering metrics.
+</div>
 
 ---
 
-## 🎯 Objectives
+# 📑 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Project Highlights](#-project-highlights)
+- [Objectives](#-objectives)
+- [Dataset](#-dataset)
+- [Feature Engineering](#-feature-engineering)
+- [Methodology](#-methodology)
+- [Machine Learning Algorithms](#-machine-learning-algorithms)
+- [Evaluation Metrics](#-evaluation-metrics)
+- [Results](#-results)
+- [Figures](#-figures)
+- [Repository Structure](#-repository-structure)
+- [Installation](#-installation)
+- [Dependencies](#-dependencies)
+- [Future Work](#-future-work)
+- [Citation](#-citation)
+- [Author](#-author)
+- [License](#-license)
+
+---
+
+# 📌 Project Overview
+
+Floods are among the most destructive natural disasters worldwide, causing extensive human, environmental, and economic losses. Understanding flood risk patterns is essential for disaster preparedness and mitigation.
+
+This project presents an **unsupervised machine learning framework** for identifying global flood-risk patterns using the **EM-DAT (Emergency Events Database)**. Unlike many previous studies that rely on synthetic or simulated datasets, this work leverages **real-world historical flood records** and compares multiple clustering algorithms to identify meaningful flood-risk groups.
+
+The complete workflow includes:
+
+- Data preprocessing
+- Feature engineering
+- Feature scaling
+- Principal Component Analysis (PCA)
+- Comparative clustering
+- Model evaluation
+- Cluster interpretation
+
+---
+
+# ✨ Project Highlights
+
+- 🌍 **4,207** historical flood events analyzed
+- 📊 **11 engineered flood-impact features**
+- 📉 Principal Component Analysis (PCA)
+- 🤖 Comparison of **4 clustering algorithms**
+- 📈 **17 publication-quality figures**
+- 🏆 K-Means identified as the best-performing clustering algorithm
+- 📂 Complete reproducible Jupyter Notebook
+
+---
+
+# 🎯 Objectives
 
 - Perform exploratory analysis of historical flood events.
 - Engineer meaningful flood-impact features.
-- Reduce dimensionality using Principal Component Analysis (PCA).
+- Reduce dimensionality using PCA.
 - Compare multiple clustering algorithms.
 - Identify natural flood-risk groups.
 - Interpret cluster characteristics for disaster risk assessment.
 
 ---
 
-## 📂 Dataset
+# 📂 Dataset
 
-**Source:** EM-DAT – The International Disaster Database
+**Source**
 
-The dataset contains historical flood events worldwide, including information such as:
+EM-DAT – The International Disaster Database
 
-- Total deaths
-- Total affected population
-- Economic damage
-- Event duration
-- Flood subtype
+Dataset contains worldwide flood events with information such as:
+
+- Total Deaths
+- Total Affected Population
+- Economic Damage
+- Adjusted Economic Damage
+- Event Duration
+- Flood Subtype
 - Region
-- Year of occurrence
+- Start Year
 
 ---
 
-## ⚙️ Feature Engineering
+# ⚙️ Feature Engineering
 
 The following engineered features were used:
 
-- Log_TotalDeaths
-- Log_TotalAffected
-- Log_TotalDamage
-- Log_AdjDamage
-- Log_DamagePerDeath
-- Log_Duration
-- Month_Sin
-- Month_Cos
-- FloodSubtype_Code
-- Region_Code
-- Start Year
+| Feature |
+|----------|
+| Log_TotalDeaths |
+| Log_TotalAffected |
+| Log_TotalDamage |
+| Log_AdjDamage |
+| Log_DamagePerDeath |
+| Log_Duration |
+| Month_Sin |
+| Month_Cos |
+| FloodSubtype_Code |
+| Region_Code |
+| Start Year |
 
-All numerical features were standardized before clustering.
+All numerical variables were standardized before clustering.
 
 ---
 
-## 🔬 Methodology
-
-The workflow of this project is shown below:
+# 🔬 Methodology
 
 ```
 EM-DAT Dataset
@@ -91,28 +148,30 @@ Clustering Algorithms
       └── OPTICS
       │
       ▼
-Evaluation
+Cluster Evaluation
       │
       ▼
-Cluster Interpretation
+Flood Risk Interpretation
 ```
 
 ---
 
-## 🤖 Machine Learning Algorithms
+# 🤖 Machine Learning Algorithms
 
 The following clustering algorithms were evaluated:
 
-- K-Means
-- Gaussian Mixture Model (GMM)
-- DBSCAN
-- OPTICS
+| Algorithm | Description |
+|------------|------------|
+| K-Means | Partition-based clustering |
+| Gaussian Mixture Model | Probabilistic clustering |
+| DBSCAN | Density-based clustering |
+| OPTICS | Density-based hierarchical clustering |
 
 ---
 
-## 📊 Evaluation Metrics
+# 📊 Evaluation Metrics
 
-Models were compared using:
+Models were evaluated using:
 
 - Silhouette Score
 - Calinski-Harabasz Index
@@ -126,18 +185,30 @@ Models were compared using:
 
 The analysis identified **two natural flood-risk clusters** representing different levels of flood severity.
 
-Key observations include:
+## Key Findings
 
-- K-Means achieved the best overall clustering performance.
-- PCA retained approximately **95%** of the total variance.
-- Economic damage variables were the strongest contributors to cluster separation.
-- DBSCAN and OPTICS were less suitable due to the density characteristics of the dataset.
+- ✅ K-Means achieved the best clustering performance.
+- ✅ PCA retained approximately **95%** of the total variance.
+- ✅ Economic damage variables were the strongest contributors to cluster separation.
+- ✅ Asia experienced the highest flood impacts.
+- ✅ DBSCAN and OPTICS were less effective because of the density characteristics of the dataset.
+
+---
+
+## 🏆 Model Comparison
+
+| Algorithm | Performance |
+|------------|------------|
+| 🥇 K-Means | Best Overall |
+| 🥈 Gaussian Mixture Model | Good |
+| 🥉 DBSCAN | Moderate |
+| OPTICS | Weak |
 
 ---
 
 # 📷 Figures
 
-## Feature Engineering
+## Feature Distributions
 
 ![](figures/fig1_emdat_feature_distributions.png)
 
@@ -155,7 +226,7 @@ Key observations include:
 
 ---
 
-## PCA Analysis
+## PCA Scree Plot
 
 ![](figures/fig5_emdat_pca_scree.png)
 
@@ -167,7 +238,7 @@ Key observations include:
 
 ---
 
-## Cluster Feature Profile
+## Cluster Feature Profiles
 
 ![](figures/fig14_emdat_cluster_profiles.png)
 
@@ -179,7 +250,7 @@ Key observations include:
 
 ---
 
-## Final Silhouette Plot
+## Silhouette Plot
 
 ![](figures/fig17_emdat_silhouette_plot.png)
 
@@ -187,7 +258,7 @@ Key observations include:
 
 # 📁 Repository Structure
 
-```
+```text
 Flood-Risk-Clustering-EMDAT/
 │
 ├── data/
@@ -219,10 +290,10 @@ Flood-Risk-Clustering-EMDAT/
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Flood-Risk-Clustering-EMDAT.git
+git clone https://github.com/AnuragYadav12/Flood-Risk-Clustering-EMDAT.git
 ```
 
-Move into the project directory
+Navigate into the repository
 
 ```bash
 cd Flood-Risk-Clustering-EMDAT
@@ -246,13 +317,11 @@ Open
 Flood_Risk_Clustering_EMDAT.ipynb
 ```
 
-and run all cells.
+Run all cells sequentially.
 
 ---
 
 # 📦 Dependencies
-
-Major libraries used:
 
 - Python 3.11
 - pandas
@@ -262,15 +331,46 @@ Major libraries used:
 - scikit-learn
 - scipy
 - openpyxl
+- jupyter
 
 ---
 
 # 🔮 Future Work
 
-- Incorporate deep clustering techniques.
-- Integrate satellite-derived flood indicators.
-- Develop an interactive flood risk dashboard.
-- Apply temporal forecasting for future flood-risk prediction.
+- Deep clustering techniques
+- Autoencoder-based clustering
+- Explainable AI for clustering
+- Satellite-based flood indicators
+- Interactive dashboard
+- Temporal flood-risk forecasting
+
+---
+
+# 📚 Citation
+
+If you use this repository in your research, please cite:
+
+```bibtex
+@misc{yadav2026,
+  author       = {Anurag Yadav},
+  title        = {Flood Risk Clustering Using EM-DAT Data},
+  year         = {2026},
+  publisher    = {GitHub},
+  howpublished = {\url{https://github.com/AnuragYadav12/Flood-Risk-Clustering-EMDAT}},
+  note         = {GitHub repository}
+}
+```
+
+---
+
+# 🙏 Acknowledgements
+
+- EM-DAT – The International Disaster Database
+- Centre for Research on the Epidemiology of Disasters (CRED)
+- scikit-learn
+- pandas
+- NumPy
+- Matplotlib
 
 ---
 
@@ -278,18 +378,24 @@ Major libraries used:
 
 **Anurag Yadav**
 
-M.Tech in Artificial Intelligence & Machine Learning
+*M.Tech in Artificial Intelligence & Machine Learning*
 
-GitHub: https://github.com/Anurag-Yadav
+🔗 GitHub: https://github.com/AnuragYadav12
 
-LinkedIn: https://linkedin.com/in/Anurag-Yadav
+🔗 LinkedIn: https://linkedin.com/in/Anurag-Yadav
 
 ---
 
 # 📜 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
-## ⭐ If you found this project useful, please consider giving it a star!
+<div align="center">
+
+## ⭐ If you found this project useful, please consider giving it a Star!
+
+**Happy Research! 🌍📊**
+
+</div>

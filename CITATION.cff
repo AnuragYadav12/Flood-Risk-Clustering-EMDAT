@@ -1,1 +1,33 @@
+cff-version: 1.2.0
+title: "Flood Risk Clustering Using EM-DAT Data"
+message: "If you use this repository in your research, please cite it."
+type: software
 
+authors:
+  - family-names: "Yadav"
+    given-names: "Anurag"
+
+version: "1.0.0"
+
+date-released: 2026-07-01
+
+license: "MIT"
+
+repository-code: "https://github.com/AnuragYadav12/Flood-Risk-Clustering-EMDAT"
+
+url: "https://github.com/AnuragYadav12/Flood-Risk-Clustering-EMDAT"
+
+keywords:
+  - flood risk
+  - clustering
+  - machine learning
+  - EM-DAT
+  - PCA
+  - K-Means
+  - Gaussian Mixture Model
+  - DBSCAN
+  - OPTICS
+
+abstract: >
+  An unsupervised machine learning framework for identifying
+  global flood-risk patterns using the EM-DAT disaster database.
